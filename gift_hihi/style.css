@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffe6e6;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+
+/* Present Box Animation */
+.present-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.present-box img {
+    width: 100px; /* Size for the present */
+}
+
+
+/* Subtle movement for the present */
+@keyframes float {
+    0% { transform: translate(-50%, -50%) translateY(0); }
+    50% { transform: translate(-50%, -50%) translateY(-10px); }
+    100% { transform: translate(-50%, -50%) translateY(0); }
+}
+
+/* Letter Fade In */
+.letter-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none; /* Initially hidden */
+    opacity: 0; /* For fade effect */
+    transition: opacity 1s ease; /* Fade transition */
+}
+
+/* Show letter */
+.letter-show {
+    display: block; /* Make visible */
+    opacity: 1; /* Fade in */
+}
+
+/* Message Styling */
+.message {
+    font-size: 18px; /* Slightly smaller for better fit */
+    color: #ff66a1;
+    line-height: 1.6;
+    text-align: center;
+    display: none; /* Initially hidden */
+    animation: pop 0.3s forwards; /* Add pop effect */
+    position: relative;
+    padding: 20px;
+    border: 2px solid #ff66a1;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Floating effect for message */
+@keyframes pop {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.2); opacity: 1; }
+}
+
+/* Styling for the envelope image */
+.letter img {
+    width: 200px; /* Increased size for better visibility */
+    display: block; /* Centering the image */
+}
+
+/* Heart styling */
+.heart {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0;
+    animation: float 2s infinite; /* Hearts float animation */
+}
